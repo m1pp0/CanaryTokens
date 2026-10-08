@@ -1,0 +1,13 @@
+﻿fastapi
+uvicorn[standard]
+sqlalchemy
+alembic
+psycopg2-binary
+psycopg[binary]
+python-jose[cryptography]
+bcrypt
+pydantic[email]
+python-dotenv
+python-multipart
+pytest
+httpx
