@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from app.routers import auth
+from app.routers import auth, tokens
 
 app = FastAPI(
     title="Canary Tokens API",
@@ -9,6 +9,7 @@ app = FastAPI(
 )
 
 app.include_router(auth.router)
+app.include_router(tokens.router)
 
 
 @app.get("/health", tags=["system"])
