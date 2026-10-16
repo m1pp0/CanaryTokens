@@ -6,7 +6,10 @@ from sqlalchemy.orm import sessionmaker
 from app.database import Base, get_db
 from app.main import app
 
-TEST_DATABASE_URL = "postgresql+psycopg2://postgres:pOpka200@localhost:5432/canarytokens_test"
+import os
+
+TEST_DATABASE_URL = os.getenv("DATABASE_URL", "postgresql+psycopg2://postgres:pOpka200@localhost:5432/canarytokens_test",)
+
 
 engine = create_engine(TEST_DATABASE_URL)
 TestingSessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)
